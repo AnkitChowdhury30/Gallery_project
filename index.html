@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project card</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+             box-sizing: border-box; /* margin padding ki sizing na krni pade */
+        }
+        .wrapper{
+            width: 80%;
+            margin: auto;
+            height: 80vh;
+             display: flex;
+            justify-content: space-between;
+            padding: 50px 0;
+
+        }
+        .card{
+            width: 4%;
+            height: 80vh;
+            border-radius: 50px;
+            background-color: red;
+            background-size:cover ;
+            background-position: center;
+            cursor: pointer;
+            transition: 0.4s ease-in;
+            overflow: hidden; /* card chota hone per headuing bahar na jkay*/
+            color: white;
+            position: relative;
+            display: flex; /*taki lika hua centre mai aa jay*/
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .card p{
+            font-size: 22px;
+            text-shadow: 0px 0px 5px black;
+            opacity: 0;
+        }
+        .active p{
+            opacity: 1;
+            transition: 1s ease-in;
+        }
+        .active{
+            width: 80%;
+        }
+        .card:nth-child(1){
+            background-image: url('./img1.jpg');
+        }
+        .card:nth-child(2){
+            background-image: url('./img2.jpg');
+        }
+        .card:nth-child(3){
+            background-image: url('./img3.jpg');
+        }
+        .card:nth-child(4){
+            background-image: url('./img4.jpg');
+        }
+        .card:nth-child(5){
+            background-image: url('./img5.jpg');
+        }
+        .card h3{
+           font-weight: bold;
+            font-size: 25px;
+            position: absolute;
+            left: 20px;
+            bottom: 30px;
+            opacity: 0; /* means jo card mai lika visible na kerna ho to */
+        }
+        .active h3{
+            opacity: 1;
+            transition: 0.6s ease-in;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card active">
+            <h3> Avengers </h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam facere dolore, alias voluptate placeat quam magni, necessitatibus molestiae, ipsam corporis voluptatibus recusandae expedita. Ex quidem quo atque ipsa? Maiores eius eveniet accusantium fugiat reiciendis maxime nemo repellendus asperiores, laborum architecto.</p>
+        </div>
+        <div class="card">
+            <h3> Avengers </h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam facere dolore, alias voluptate placeat quam magni, necessitatibus molestiae, ipsam corporis voluptatibus recusandae expedita. Ex quidem quo atque ipsa? Maiores eius eveniet accusantium fugiat reiciendis maxime nemo repellendus asperiores, laborum architecto.</p>
+        </div>
+        <div class="card">
+            <h3> Avengers </h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam facere dolore, alias voluptate placeat quam magni, necessitatibus molestiae, ipsam corporis voluptatibus recusandae expedita. Ex quidem quo atque ipsa? Maiores eius eveniet accusantium fugiat reiciendis maxime nemo repellendus asperiores, laborum architecto.</p>
+        </div>
+        <div class="card">
+            <h3> Avengers </h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam facere dolore, alias voluptate placeat quam magni, necessitatibus molestiae, ipsam corporis voluptatibus recusandae expedita. Ex quidem quo atque ipsa? Maiores eius eveniet accusantium fugiat reiciendis maxime nemo repellendus asperiores, laborum architecto.</p>
+        </div>
+        <div class="card">
+            <h3> Avengers </h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam facere dolore, alias voluptate placeat quam magni, necessitatibus molestiae, ipsam corporis voluptatibus recusandae expedita. Ex quidem quo atque ipsa? Maiores eius eveniet accusantium fugiat reiciendis maxime nemo repellendus asperiores, laborum architecto.</p>
+        </div>
+    </div>
+</body>
+<script>
+    let cards= document.querySelectorAll('.card')
+    cards.forEach((card)=>{
+        card.addEventListener('click',()=>{
+            cards.forEach((item)=>{
+                item.classList.remove('active')
+            })
+            card.classList.add('active')
+        })
+    })
+</script>
+</html>
